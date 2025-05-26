@@ -10,7 +10,7 @@
 ※**他バージョンのソースコードは一切触っていないため1.12.2ブランチ以外はフォーク元そのまんまです。**
 
 ## 改造を施した箇所
-[Watchdog_Switch.java](src/main/java/org/spigotmc/Watchdog_Switch.java)と[WatchdogThread.java](src/main/java/org/spigotmc/WatchdogThread.java)の2個所だけです。他は触っていません。  
+[Watchdog_Switch.java](../src/main/java/org/spigotmc/Watchdog_Switch.java)と[WatchdogThread.java](../src/main/java/org/spigotmc/WatchdogThread.java)の2個所だけです。他は触っていません。  
 前者は文字通りWatchdogの制御スイッチになっています。後者はスイッチを呼び出す改造のみ施しています。
 
 ## 挙動
