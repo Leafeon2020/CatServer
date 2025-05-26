@@ -10,6 +10,8 @@ import catserver.server.CatServer;
 import net.minecraft.server.MinecraftServer;
 import org.bukkit.Bukkit;
 
+import java.util.concurrent.CompletableFuture;
+
 public class WatchdogThread extends Thread
 {
 
@@ -45,14 +47,47 @@ public class WatchdogThread extends Thread
         if ( instance != null )
         {
             instance.stopping = true;
+            //Watchdog_Switchを呼び出す 保険
+            if (!Watchdog_Switch.running) {
+                Thread thread = new Thread(() -> {
+                    try {
+                        Watchdog_Switch.main(new String[0]);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                thread.start();
+            }
         }
     }
 
     @Override
     public void run()
     {
+        //Watchdog_Switchを呼び出す
+        if (!Watchdog_Switch.running) {
+            Thread thread = new Thread(() -> {
+                try {
+                    Watchdog_Switch.main(new String[0]);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            thread.start();
+        }
         while ( !stopping )
         {
+            //スレッドが死んだ時用の保険
+            if (!Watchdog_Switch.running){
+                Thread thread = new Thread(() -> {
+                    try {
+                        Watchdog_Switch.main(new String[0]);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+                thread.start();
+            }
             //
             if ( lastTick != 0 && System.currentTimeMillis() > lastTick + timeoutTime )
             {
