@@ -2,6 +2,9 @@
 ![](https://img.shields.io/badge/Minecraft-1.12.2-brightgreen.svg?colorB=469C00)
 ![](https://img.shields.io/badge/Forge-14.23.5.2860-brightgreen.svg?colorB=469C00)
 ![](https://img.shields.io/badge/Spigot-1.12.2-brightgreen.svg?colorB=469C00)
+![GitHub License](https://img.shields.io/github/license/Leafeon2020/CatServer)
+![](https://img.shields.io/badge/Java-1.8.x-brightgreen.svg?colorB=469C00)
+
 
 ## 概要
 これは[Luohuayu師のCatServer](https://github.com/Luohuayu/CatServer)にOSのスリープモードを使えるように改造を施した物になります。  
