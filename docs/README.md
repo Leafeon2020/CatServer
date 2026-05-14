@@ -24,4 +24,4 @@
 多分Javaのバージョン依存が強い書き方だったりMinecraftのバージョンに依存しない記述になっているため他のSpigot系サーバーに移植する事は可能だと思います。
 
 ## ライセンス
-![LGPLv3](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/LGPLv3_Logo.svg/640px-LGPLv3_Logo.svg.png)
+![LGPLv3](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/LGPLv3_Logo.svg/960px-LGPLv3_Logo.svg.png)
